@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Experian Data Quality - Email Validate",
+		"name": "Email Validate",
 		"_postman_id": "41f8666a-8509-9ce7-9f39-fbff8050ca4a",
 		"description": "Experian Email Validate API service quickly and accurately identifies whether or not an email address is valid and deliverable. It also offers suggestions for a correct address enabling users to select a more accurate and verified e-mail.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"

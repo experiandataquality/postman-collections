@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Experian Data Quality - Global Intuitive",
+		"name": "Global Intuitive",
 		"_postman_id": "a5f45c87-bb07-1668-4f58-eeacc29252bb",
 		"description": "Fast and efficient global REST API for capturing validated addresses. Allows users to search and format their address in just a few keystrokes. ",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -59,7 +59,7 @@
 			},
 			"response": [
 				{
-					"id": "5c19382e-eea4-44db-bfc8-3c55ea33e644",
+					"id": "813ccd08-7635-48ee-ac9b-48ec9a2d3c9e",
 					"name": "Example Search",
 					"originalRequest": {
 						"url": {
@@ -165,7 +165,7 @@
 			},
 			"response": [
 				{
-					"id": "6c043cfb-6e38-4c48-9855-dc0778692405",
+					"id": "d183cf1f-cbbf-4112-ac4d-0d5d413c01c4",
 					"name": "Format Example",
 					"originalRequest": {
 						"url": {

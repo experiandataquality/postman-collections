@@ -24,23 +24,33 @@ Our real-time REST APIs give you flexibility and customization when verifying an
 
 Global Intuitive is a fast and efficient REST API for capturing validated global addresses.
 
+[Download file](../../raw/master/global-intuitive.postman_collection.json)
+
+
 ### Address Validate REST
 
 Address Validate API provides a REST interface for accessing address searching and verification functionality for USA, UK and Canada.
+
+[Download file](../../raw/master/address-validate-api-rest.postman_collection.json)
 
 ### Email Validate
 
 Email Validate quickly and accurately identifies whether or not an email address is valid and deliverable. It also offers suggestions for a correct address enabling users to select a more accurate and verified e-mail.
 
+[Download file](../../raw/master/email-validate.postman_collection.json)
 ### Phone Validate
 
 Phone Validate allows you to validate full 10-digit numbers and identifies phone type in real time. 
 
 > USA and Canada only.
 
+[Download file](../../raw/master/phone-validate-api.postman_collection.json)
+
 ### Global Phone Validate
 
 Global Phone Validate is a web service that allows you to validate phone numbers and obtain additional information related to those numbers.
+
+[Download file](../../raw/master/global-phone-validate.postman_collection.json)
 
 ### Phone Validate V2
 
@@ -49,11 +59,15 @@ Phone Validate v2 allows you to validate phone numbers and obtain additional inf
 > Currently supports mobile numbers for United States, Canada, United Kingdom, Ireland, Australia, Singapore, and France. 
 For the United States and Canada, the coverage extends to landline numbers as well.
 
+[Download file](../../raw/master/phone-validate-v2.postman_collection.json)
+
 ### Reverse Phone Append
 
 Reverse Phone Append allows you to validate phone data and returns different types of phone information. This API can also link phone numbers with the person's name and postal address information, in real time. 
 
 > USA and Canada only.
+
+[Download file](../../raw/master/reverse-phone-append.postman_collection.json)
 
 ## SOAP APIs
 
@@ -61,7 +75,11 @@ Reverse Phone Append allows you to validate phone data and returns different typ
 
 Address Validate SOAP provides an interface for global address searching and validation. We currently support over 160 countries.
 
+You will need to edit the body of each request and replace the placeholders.
+
 > Despite being a SOAP API, this Postman collection allows you to make requests via the REST client. You won't be able to use any of the code generation functionality with this collection.
+
+[Download file](../../raw/master/address-validate-soap.postman_collection.json)
 
 
 

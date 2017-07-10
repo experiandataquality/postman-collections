@@ -1,9 +1,9 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Experian Data Quality - Global Phone Validate ",
+		"name": "Global Phone Validate ",
 		"_postman_id": "e4af682a-6a49-5187-a8ab-5d40ae975365",
-		"description": "",
+		"description": "Global Phone Validate is a web service that allows you to validate phone numbers and obtain additional information related to those numbers.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [

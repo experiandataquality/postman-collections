@@ -1,9 +1,9 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Experian Data Quality - Address Validate API REST",
+		"name": "Address Validate API REST",
 		"_postman_id": "00f02d8d-db42-d7f3-cb2f-88e5f4037c1c",
-		"description": "ddress Validate API provides a REST interface for accessing address searching and verification functionality. ",
+		"description": "Address Validate API provides a REST interface for accessing address searching and verification functionality. ",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [

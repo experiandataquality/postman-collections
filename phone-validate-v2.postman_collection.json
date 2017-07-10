@@ -1,16 +1,16 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Experian Data Quality - Reverse Phone Append",
-		"_postman_id": "01dbc94f-3d41-ef5d-3803-f56612121426",
-		"description": "",
+		"name": "Phone Validate v2",
+		"_postman_id": "0da5638b-4d54-6cf1-6626-39479832f6bf",
+		"description": "Phone Validate v2 allows you to validate phone numbers and obtain additional information related to those numbers.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Async - Query",
 			"request": {
-				"url": "https://api.experianmarketingservices.com/query/PhoneValidatePlus/1.0/",
+				"url": "https://api.experianmarketingservices.com/query/PhoneValidate/2.0/",
 				"method": "POST",
 				"header": [
 					{
@@ -35,7 +35,7 @@
 		{
 			"name": "Async - Result",
 			"request": {
-				"url": "https://api.experianmarketingservices.com/result/PhoneValidatePlus/1.0/{id returned from query}",
+				"url": "https://api.experianmarketingservices.com/result/PhoneValidate/2.0/{id returned from query}",
 				"method": "GET",
 				"header": [
 					{
@@ -45,14 +45,14 @@
 					}
 				],
 				"body": {},
-				"description": "Asynchronous - retrieves the results of a Reverse Phone Append POST /query request. The URL for this request is returned in the Content-Location field name of the response header when making the initial query."
+				"description": "Asynchronous - retrieves the results of a Phone Validate v2 POST /query request. The URL for this request is returned in the Content-Location field name of the response header when making the initial query."
 			},
 			"response": []
 		},
 		{
 			"name": "Sync - QueryResult",
 			"request": {
-				"url": "https://api.experianmarketingservices.com/sync/queryresult/PhoneValidatePlus/1.0/",
+				"url": "https://api.experianmarketingservices.com/sync/queryresult/PhoneValidate/2.0/",
 				"method": "POST",
 				"header": [
 					{

@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Experian Data Quality - Address Validate SOAP",
+		"name": "Address Validate SOAP",
 		"_postman_id": "64db4b4d-ccdc-46ce-4642-94a9d5d5fda0",
 		"description": "Address Validate API provides a SOAP interface for global address searching and validation. We currently support over 160 countries.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
