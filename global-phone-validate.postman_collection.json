@@ -1,0 +1,78 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Global Phone Validate ",
+		"_postman_id": "e4af682a-6a49-5187-a8ab-5d40ae975365",
+		"description": "Global Phone Validate is a web service that allows you to validate phone numbers and obtain additional information related to those numbers.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Async - Query",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/query/PhoneValidate/3.0/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Number\": \"{Number to be validated}\"\n}"
+				},
+				"description": "Asynchronous - posts a phone number to the service to be validated. Make a GET /result request to retrieve the results."
+			},
+			"response": []
+		},
+		{
+			"name": "Async - Result",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/result/PhoneValidate/3.0/{id returned from query}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Asynchronous - retrieves the results of a Global Phone Validate POST /query request. The URL for this request is returned in the Content-Location field name of the response header when making the initial query."
+			},
+			"response": []
+		},
+		{
+			"name": "Sync - QueryResult",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/sync/queryresult/PhoneValidate/3.0/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Number\": \"<Number to be validated>\"\n}"
+				},
+				"description": "Synchronous - posts a phone number to the service to be validated and, once complete, returns the results of the validation."
+			},
+			"response": []
+		}
+	]
+}

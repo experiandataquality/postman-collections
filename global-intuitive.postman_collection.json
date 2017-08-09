@@ -1,0 +1,223 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Global Intuitive",
+		"_postman_id": "a5f45c87-bb07-1668-4f58-eeacc29252bb",
+		"description": "Fast and efficient global REST API for capturing validated addresses. Allows users to search and format their address in just a few keystrokes. ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"url": {
+					"raw": "https://api.edq.com/capture/address/v2/search?query=<search query>&country=<3 letter country ISO code>&take=<number of results>",
+					"protocol": "https",
+					"host": [
+						"api",
+						"edq",
+						"com"
+					],
+					"path": [
+						"capture",
+						"address",
+						"v2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "<search query>",
+							"equals": true,
+							"description": "Address to search on - the input from the user so far"
+						},
+						{
+							"key": "country",
+							"value": "<3 letter country ISO code>",
+							"equals": true,
+							"description": "Must be a licensed country. See documentation for full list of supported ISO codes."
+						},
+						{
+							"key": "take",
+							"value": "<number of results>",
+							"equals": true,
+							"description": "Optional parameter, default is 7."
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Search for an address. Returns an object containing suggested addresses based on the included parameters."
+			},
+			"response": [
+				{
+					"id": "813ccd08-7635-48ee-ac9b-48ec9a2d3c9e",
+					"name": "Example Search",
+					"originalRequest": {
+						"url": {
+							"raw": "https://api.edq.com/capture/address/v2/search?query=2-3 clapham common north side&country=gbr&take=7",
+							"protocol": "https",
+							"host": [
+								"api",
+								"edq",
+								"com"
+							],
+							"path": [
+								"capture",
+								"address",
+								"v2",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "2-3 clapham common north side",
+									"equals": true,
+									"description": "Address to search on - the input from the user so far"
+								},
+								{
+									"key": "country",
+									"value": "gbr",
+									"equals": true,
+									"description": "Must be a licensed country. See documentation for full list of supported ISO codes."
+								},
+								{
+									"key": "take",
+									"value": "7",
+									"equals": true,
+									"description": "Optional parameter, default is 7."
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth-Token",
+								"value": "a1b234c5-a1bc-1234-a1bc-123a4567891bc",
+								"description": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"count\": 1,\n    \"results\": [\n        {\n            \"suggestion\": \"Experian Data Quality, George West House, 2-3 Clapham Common North Side, London, SW4 ...\",\n            \"matched\": [\n                [\n                    67,\n                    71\n                ],\n                [\n                    46,\n                    66\n                ],\n                [\n                    42,\n                    45\n                ]\n            ],\n            \"format\": \"https://api.edq.com/capture/address/v2/format?country=GBR&id=AVzAG9qw2CTc2aQaIiu4\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Format",
+			"request": {
+				"url": {
+					"raw": "https://api.edq.com/capture/address/v2/format?country=<3 letter ISO country code>&id=<format ID>",
+					"protocol": "https",
+					"host": [
+						"api",
+						"edq",
+						"com"
+					],
+					"path": [
+						"capture",
+						"address",
+						"v2",
+						"format"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "<3 letter ISO country code>",
+							"equals": true,
+							"description": "Must be a licensed country. See documentation for full list of supported ISO codes."
+						},
+						{
+							"key": "id",
+							"value": "<format ID>",
+							"equals": true,
+							"description": "ID is returned in the payload of the Search request. The full Format URL is returned, not just the ID."
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Returns the full address and component breakdown for the chosen address."
+			},
+			"response": [
+				{
+					"id": "d183cf1f-cbbf-4112-ac4d-0d5d413c01c4",
+					"name": "Format Example",
+					"originalRequest": {
+						"url": {
+							"raw": "https://api.edq.com/capture/address/v2/format?country=gbr&id=AVzAG9qw2CTc2aQaIiu4",
+							"protocol": "https",
+							"host": [
+								"api",
+								"edq",
+								"com"
+							],
+							"path": [
+								"capture",
+								"address",
+								"v2",
+								"format"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "gbr",
+									"equals": true,
+									"description": "Must be a licensed country. See documentation for full list of supported ISO codes."
+								},
+								{
+									"key": "id",
+									"value": "AVzAG9qw2CTc2aQaIiu4",
+									"equals": true,
+									"description": "ID is returned in the payload of the Search request. The full Format URL is returned, not just the ID."
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth-Token",
+								"value": "a1b234c5-a1bc-1234-a1bc-123a4567891bc",
+								"description": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "parsed",
+					"header": [],
+					"cookie": [],
+					"responseTime": 0,
+					"body": "{\n    \"address\": [\n        {\n            \"addressLine1\": \"Experian Data Quality\"\n        },\n        {\n            \"addressLine2\": \"George West House\"\n        },\n        {\n            \"addressLine3\": \"2-3 Clapham Common North Side\"\n        },\n        {\n            \"locality\": \"LONDON\"\n        },\n        {\n            \"province\": \"\"\n        },\n        {\n            \"postalCode\": \"SW4 0QL\"\n        },\n        {\n            \"country\": \"UNITED KINGDOM\"\n        }\n    ],\n    \"components\": [\n        {\n            \"building1\": \"George West House\"\n        },\n        {\n            \"organisation1\": \"Experian Data Quality\"\n        },\n        {\n            \"streetNumber1\": \"2-3\"\n        },\n        {\n            \"street1\": \"Clapham Common North Side\"\n        },\n        {\n            \"locality1\": \"LONDON\"\n        },\n        {\n            \"postalCode1\": \"SW4 0QL\"\n        },\n        {\n            \"country1\": \"UNITED KINGDOM\"\n        },\n        {\n            \"countryISO1\": \"GBR\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

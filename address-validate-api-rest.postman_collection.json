@@ -1,0 +1,62 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Address Validate API REST",
+		"_postman_id": "00f02d8d-db42-d7f3-cb2f-88e5f4037c1c",
+		"description": "Address Validate API provides a REST interface for accessing address searching and verification functionality. ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search-Address",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/capture/v1/search-address/text?query=<Address to search for>&country=<three digit country ISO code>",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Searches for addresses based on an unstructured text query. "
+			},
+			"response": []
+		},
+		{
+			"name": "Verify-Address",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/capture/v1/verify-address/text/?query=<Address to be verified>&country=<three digit country ISO code>",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Verifies the address based on an unstructured text query."
+			},
+			"response": []
+		},
+		{
+			"name": "Address-Layout",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/capture/v1/address-layout/<ID of address to be returned as detailed address layout record>",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Returns a single, detailed address layout record for a supplied identifier."
+			},
+			"response": []
+		}
+	]
+}

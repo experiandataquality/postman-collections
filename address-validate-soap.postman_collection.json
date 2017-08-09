@@ -1,0 +1,442 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Address Validate SOAP",
+		"_postman_id": "64db4b4d-ccdc-46ce-4642-94a9d5d5fda0",
+		"description": "Address Validate API provides a SOAP interface for global address searching and validation. We currently support over 160 countries.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DoCanSearch",
+			"request": {
+				"url": {
+					"raw": "https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"ondemand",
+						"qas",
+						"com"
+					],
+					"path": [
+						"ProOnDemand",
+						"V3",
+						"ProOnDemandService.asmx"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoCanSearch",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader>\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <ond:QACanSearch>\r\n         <ond:Country>{3 letter country ISO code e.g. USA}</ond:Country>\r\n         <ond:Engine>{Engine name e.g. Singleline}</ond:Engine>\r\n         <!--Optional:-->\r\n         <ond:Layout>{Layout name e.g. QADefault}</ond:Layout>\r\n      </ond:QACanSearch>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Checks that the combination of data mapping, engine and layout are valid for searching."
+			},
+			"response": []
+		},
+		{
+			"name": "DoSearch",
+			"request": {
+				"url": {
+					"raw": "https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"ondemand",
+						"qas",
+						"com"
+					],
+					"path": [
+						"ProOnDemand",
+						"V3",
+						"ProOnDemandService.asmx"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoSearch",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader>\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n      <ond:QASearch>\r\n         <ond:Country>{3 letter country ISO code e.g. USA}</ond:Country>\r\n         <ond:Engine>{Engine name e.g. Singleline}</ond:Engine>\r\n         <!--Optional:-->\r\n         <ond:Layout>{Layout name e.g. QADefault}</ond:Layout>\r\n         <ond:Search>{Address to search for e.g. 125 Summer St, Boston, MA, 02110}</ond:Search>\r\n         <!--Optional:-->\r\n         <ond:FormattedAddressInPicklist>false</ond:FormattedAddressInPicklist>\r\n      </ond:QASearch>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Submits an initial search to the server."
+			},
+			"response": []
+		},
+		{
+			"name": "DoRefine",
+			"request": {
+				"url": {
+					"raw": "https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"ondemand",
+						"qas",
+						"com"
+					],
+					"path": [
+						"ProOnDemand",
+						"V3",
+						"ProOnDemandService.asmx"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoRefine",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n\t<QARefine Threshold=\"50\" xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      <Moniker>{Moniker returned by Search/Refine}</Moniker>\r\n      <Refinement></Refinement>\r\n    </QARefine>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Used to step into and refine a picklist result."
+			},
+			"response": []
+		},
+		{
+			"name": "DoGetAddress",
+			"request": {
+				"url": {
+					"raw": "https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"ondemand",
+						"qas",
+						"com"
+					],
+					"path": [
+						"ProOnDemand",
+						"V3",
+						"ProOnDemandService.asmx"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoGetAddress",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n\t<QAGetAddress Threshold=\"50\" xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      <Moniker>{Moniker returned by Search/Refine}</Moniker>\r\n      <Layout>{Layout name e.g. QADefault}</Layout>\r\n    </QAGetAddress>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Formats a picklist item to obtain a final, formatted address."
+			},
+			"response": []
+		},
+		{
+			"name": "DoGetData",
+			"request": {
+				"url": " https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoGetData",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Obtains a list of available data mappings."
+			},
+			"response": []
+		},
+		{
+			"name": "DoGetSystemInfo",
+			"request": {
+				"url": " https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoGetSystemInfo",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Obtains information about the server."
+			},
+			"response": []
+		},
+		{
+			"name": "DoGetExampleAddresses",
+			"request": {
+				"url": {
+					"raw": "https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"ondemand",
+						"qas",
+						"com"
+					],
+					"path": [
+						"ProOnDemand",
+						"V3",
+						"ProOnDemandService.asmx"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoGetExampleAddresses",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n\t<QAGetExampleAddresses xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      <Country>{3 letter country ISO code e.g. USA}</Country>\r\n      <Layout>{Layout name e.g. QADefault}</Layout>\r\n    </QAGetExampleAddresses>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Returns fully formatted example addresses."
+			},
+			"response": []
+		},
+		{
+			"name": "DoGetLayouts",
+			"request": {
+				"url": {
+					"raw": "https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"ondemand",
+						"qas",
+						"com"
+					],
+					"path": [
+						"ProOnDemand",
+						"V3",
+						"ProOnDemandService.asmx"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoGetLayouts",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n\t<QAGetLayouts xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      <Country>{3 letter country ISO code e.g. USA}</Country>\r\n    </QAGetLayouts>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Obtains a list of layouts that have been configured within the configuration file."
+			},
+			"response": []
+		},
+		{
+			"name": "DoGetPromptSet",
+			"request": {
+				"url": {
+					"raw": "https://ws.ondemand.qas.com/ProOnDemand/V3/ProOnDemandService.asmx?WSDL",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"ondemand",
+						"qas",
+						"com"
+					],
+					"path": [
+						"ProOnDemand",
+						"V3",
+						"ProOnDemandService.asmx"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					},
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "SOAPAction",
+						"value": "http://www.qas.com/OnDemand-2011-03/DoGetPromptSet",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ond=\"http://www.qas.com/OnDemand-2011-03\">\r\n   <soapenv:Header>\r\n      <ond:QAQueryHeader xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      </ond:QAQueryHeader>\r\n   </soapenv:Header>\r\n   <soapenv:Body>\r\n\t<QAGetPromptSet xmlns=\"http://www.qas.com/OnDemand-2011-03\">\r\n      <Country>{3 letter country ISO code e.g. USA}</Country>\r\n      <Engine>{Engine name e.g. Singleline}</Engine>\r\n      <PromptSet>{Prompt set name e.g. Default}</PromptSet>\r\n    </QAGetPromptSet>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"description": "Obtains information regarding a prompt set."
+			},
+			"response": []
+		}
+	]
+}
