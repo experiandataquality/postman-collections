@@ -1,0 +1,78 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Email Validate",
+		"_postman_id": "41f8666a-8509-9ce7-9f39-fbff8050ca4a",
+		"description": "Experian Email Validate API service quickly and accurately identifies whether or not an email address is valid and deliverable. It also offers suggestions for a correct address enabling users to select a more accurate and verified e-mail.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Async - Query",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/query/EmailValidate/1.0/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"Email\": \"<email address to be verified>\", \r\n   \"Timeout\":\"5\", \r\n   \"Verbose\":\"True\"\r\n}"
+				},
+				"description": "Asynchronous - posts an email address to the service to be validated. Make a GET /result request to retrieve the results."
+			},
+			"response": []
+		},
+		{
+			"name": "Async - Result",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/result/EmailValidate/1.0/{id returned from query}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Asynchronous - retrieves the results of an Email Validate POST /query request. The URL for this request is returned in the Content-Location field name of the response header when making the initial query."
+			},
+			"response": []
+		},
+		{
+			"name": "Sync - QueryResult",
+			"request": {
+				"url": "https://api.experianmarketingservices.com/sync/queryresult/EmailValidate/1.0/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Email\": \"<email address to be verified>\", \r\n  \"Timeout\":\"5\",\r\n  \"Verbose\":\"True\"\r\n}"
+				},
+				"description": "Synchronous - posts an email address to the service to be validated and, once complete, returns the results of the validation."
+			},
+			"response": []
+		}
+	]
+}
