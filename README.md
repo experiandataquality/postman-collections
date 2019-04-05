@@ -33,11 +33,11 @@ Address Validate API provides a REST interface for accessing address searching a
 
 [Download file](../../raw/master/address-validate-api-rest.postman_collection.json)
 
-### Email Validate
+### Aperture Email Validation
 
-Email Validate quickly and accurately identifies whether or not an email address is valid and deliverable. It also offers suggestions for a correct address enabling users to select a more accurate and verified e-mail.
+Aperture Email Validation is a real-time REST API that helps you quickly determine the validity and status of email addresses at the point of collection. 
 
-[Download file](../../raw/master/email-validate.postman_collection.json)
+[Download file](../../raw/master/aperture-email-validation.postman_collection.json)
 ### Phone Validate
 
 Phone Validate allows you to validate full 10-digit numbers and identifies phone type in real time. 
