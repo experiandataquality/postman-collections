@@ -37,7 +37,7 @@ Address Validate API provides a REST interface for accessing address searching a
 
 Experian Email Validation is a real-time REST API that helps you quickly determine the validity and status of email addresses at the point of collection. 
 
-[Download file](../../raw/master/aperture-email-validation.postman_collection.json)
+[Download file](../../raw/master/experian-email-validation.postman_collection.json)
 ### Phone Validate
 
 Phone Validate allows you to validate full 10-digit numbers and identifies phone type in real time. 
