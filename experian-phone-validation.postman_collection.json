@@ -1,0 +1,100 @@
+﻿{
+	
+	"info": {
+
+		"_postman_id": "b30df45b-07b7-4292-85ae-0216fb6b9721",
+
+		"name": "Experian Phone Validation",
+
+		"description": "Experian Phone Validation is a real-time REST API that you can use to validate phone numbers.",
+
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+
+	},
+	"item": [
+		{
+			"name": "Submits a phone number to the service to be validated and returns the result of the validation.",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+					"key": "Auth-Token",
+					"value": "{{Auth-Token}}"
+					},
+					{
+					"key": "Content-Type",
+					"value": "application/json"
+					},
+					{
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+					},
+					{
+					"key": "Add-Metadata",
+					"type": "text",
+					"value": "true"
+					},
+					{
+					"key": "Reference-Id",
+					"type": "text",
+					"value": "Phone_Validation_Reference_Id_Test"
+					},
+					{
+					"key": "Timeout-Seconds",
+					"value": "2",
+					"type": "text"
+					}
+				],
+
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number\": \"00(44)7790606023\",\r\n  \"output_format\": \"NATIONAL\",\r\n  \"cache_value_days\": 7\r\n}"
+				
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/phone/validation/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+
+						"io"
+
+					],
+					"path": [
+						"phone",
+						"validation",
+						"v2"
+					]
+				}
+			},
+			"response": []
+ 
+		} 
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+			"id": "6e253464-2ded-4c1b-908c-9b0c236747ae",
+			"type": "text/javascript",
+			"exec": [
+				""
+				]
+			}
+		},
+		{
+
+			"listen": "test",
+			"script": {
+			"id": "ae7965f9-0c5b-43e6-b324-896859e2c9e0",
+			"type": "text/javascript",
+			"exec": [
+				""
+				]
+			}
+		}
+	]
+
+}
