@@ -38,28 +38,12 @@ Address Validate API provides a REST interface for accessing address searching a
 Experian Email Validation is a real-time REST API that helps you quickly determine the validity and status of email addresses at the point of collection. 
 
 [Download file](../../raw/master/experian-email-validation.postman_collection.json)
-### Phone Validate
 
-Phone Validate allows you to validate full 10-digit numbers and identifies phone type in real time. 
+### Experian Phone Validation
 
-> USA and Canada only.
+Experian Phone Validation is a real-time REST API that helps you quickly determine the validity and status of phone numbers at the point of collection.
 
-[Download file](../../raw/master/phone-validate-api.postman_collection.json)
-
-### Global Phone Validate
-
-Global Phone Validate is a web service that allows you to validate phone numbers and obtain additional information related to those numbers.
-
-[Download file](../../raw/master/global-phone-validate.postman_collection.json)
-
-### Phone Validate V2
-
-Phone Validate v2 allows you to validate phone numbers and obtain additional information related to those numbers.
-
-> Currently supports mobile numbers for United States, Canada, United Kingdom, Ireland, Australia, Singapore, and France. 
-For the United States and Canada, the coverage extends to landline numbers as well.
-
-[Download file](../../raw/master/phone-validate-v2.postman_collection.json)
+[Download file](../../raw/master/experian-phone-validation.postman_collection.json)
 
 ### Reverse Phone Append
 
