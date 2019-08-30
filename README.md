@@ -8,7 +8,7 @@ Postman is a GUI REST client. By importing the collections you can explore our A
 
 ## Getting Started
 
-You will need an authentication token to make any requests. For existing customers, you can get your token from our [Self Service Portal](https://portal.experianmarketingservices.com/). If you're not an existing customer, visit [edq.com](http://edq.com) for more information about our products and how to contact us.
+You will need an authentication token to make any requests. For existing customers, you can get your token from our [Self Service Portal](https://manage.experianaperture.io). If you're not an existing customer, visit [edq.com](http://edq.com) for more information about our products and how to contact us.
 
 To get started with the Postman collections you will need to download the Postman tool from [getpostman.com/postman](https://www.getpostman.com/postman).
 
@@ -20,18 +20,6 @@ The collections are configured to authenticate using a global **Auth-Token** var
 
 Our real-time REST APIs give you flexibility and customization when verifying and enriching your contact data before it hits your database.
 
-### Global Intuitive
-
-Global Intuitive is a fast and efficient REST API for capturing validated global addresses.
-
-[Download file](../../raw/master/global-intuitive.postman_collection.json)
-
-
-### Address Validate REST
-
-Address Validate API provides a REST interface for accessing address searching and verification functionality for USA, UK and Canada.
-
-[Download file](../../raw/master/address-validate-api-rest.postman_collection.json)
 
 ### Experian Email Validation
 
@@ -45,13 +33,11 @@ Experian Phone Validation is a real-time REST API that helps you quickly determi
 
 [Download file](../../raw/master/experian-phone-validation.postman_collection.json)
 
-### Reverse Phone Append
+### Global Intuitive
 
-Reverse Phone Append allows you to validate phone data and returns different types of phone information. This API can also link phone numbers with the person's name and postal address information, in real time. 
+Global Intuitive is a fast and efficient REST API for capturing validated global addresses.
 
-> USA and Canada only.
-
-[Download file](../../raw/master/reverse-phone-append.postman_collection.json)
+[Download file](../../raw/master/global-intuitive.postman_collection.json)
 
 ## SOAP APIs
 
