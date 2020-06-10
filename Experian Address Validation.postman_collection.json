@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "2aebe971-ecaa-487d-bd4e-6c0caa4f6f75",
+		"name": "Experian Address Validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"country_iso\": \"GBR\",\r\n  \"components\": {\r\n    \"unspecified\": [\r\n      \"Experian, Friars House, 160 Blackfriars Road\"\r\n    ]\r\n  },\r\n  \"location\": \"\",\r\n  \"dataset\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/address/search/v1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"address",
+						"search",
+						"v1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example Search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Auth-Token",
+								"value": "{{Auth-Token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"country_iso\": \"GBR\",\r\n  \"components\": {\r\n    \"unspecified\": [\r\n      \"Experian, Friars House, 160 Blackfriars Road\"\r\n    ]\r\n  },\r\n  \"location\": \"\",\r\n  \"dataset\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api.experianaperture.io/address/search/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"experianaperture",
+								"io"
+							],
+							"path": [
+								"address",
+								"search",
+								"v1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"result\": {\r\n        \"more_results_available\": false,\r\n        \"confidence\": \"Verified match\",\r\n        \"suggestions\": [\r\n            {\r\n                \"global_address_key\": \"aWQ9RXhwZXJpYW4gRGF0YSBRdWFsaXR5LCBGcmlhcnMgSG91c2UsIDE2MCBCbGFja2ZyaWFycyBSb2FkLCBMb25kb24sIFNFMSAuLi4sIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9NTUyNDQyNTZ-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCQ2M2ViNWZjNC01YmFiLTQyNjItYTZiMi1lMDNlNGViM2Y5YWQkJCQ\",\r\n                \"text\": \"Experian Data Quality, Friars House, 160 Blackfriars Road, London, SE1 ...\",\r\n                \"matched\": [\r\n                    [\r\n                        53,\r\n                        57\r\n                    ],\r\n                    [\r\n                        41,\r\n                        52\r\n                    ],\r\n                    [\r\n                        37,\r\n                        40\r\n                    ],\r\n                    [\r\n                        23,\r\n                        29\r\n                    ],\r\n                    [\r\n                        0,\r\n                        8\r\n                    ]\r\n                ],\r\n                \"format\": \"https://api.experianaperture.io/address/format/v1/aWQ9RXhwZXJpYW4gRGF0YSBRdWFsaXR5LCBGcmlhcnMgSG91c2UsIDE2MCBCbGFja2ZyaWFycyBSb2FkLCBMb25kb24sIFNFMSAuLi4sIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9NTUyNDQyNTZ-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCQ2M2ViNWZjNC01YmFiLTQyNjItYTZiMi1lMDNlNGViM2Y5YWQkJCR-UUw9NDR-Z2VvPVRydWU\"\r\n            }\r\n        ]\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Format",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.experianaperture.io/address/format/v1/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"address",
+						"format",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
