@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2aebe971-ecaa-487d-bd4e-6c0caa4f6f75",
+		"_postman_id": "6c2d7be6-9c7c-4c6a-916b-5e48cdeb6477",
 		"name": "Experian Address Validation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -55,10 +55,6 @@
 								"value": "{{Auth-Token}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"country_iso\": \"GBR\",\r\n  \"components\": {\r\n    \"unspecified\": [\r\n      \"Experian, Friars House, 160 Blackfriars Road\"\r\n    ]\r\n  },\r\n  \"location\": \"\",\r\n  \"dataset\": \"\"\r\n}"
-						},
 						"url": {
 							"raw": "https://api.experianaperture.io/address/search/v1",
 							"protocol": "https",
@@ -97,6 +93,16 @@
 						"key": "Accept",
 						"value": "application/json",
 						"type": "text"
+					},
+					{
+						"key": "Add-Components",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true",
+						"type": "text"
 					}
 				],
 				"url": {
@@ -117,6 +123,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
