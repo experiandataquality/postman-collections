@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "4e9e3438-8321-4d38-ad41-0b3184f5262a",
+		"name": "Experian Enrichment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Enrichment v2 - AUS Regional Geocodes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "match-rule",
+						"value": "strict"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"country_iso\": \"AUS\",\r\n  \"keys\": {\r\n    \"global_address_key\": \"aWQ9OCBDb2NocmFuZSBTdHJlZXQsIFdFU1QgS0VNUFNFWSAgTlNXIDI0NDAsIEF1c3RyYWxpYX5hbHRfa2V5PUdBTlNXNzA2MjY4NjE5fmRhdGFzZXQ9QVVTX0dOQUZ-Zm9ybWF0X2tleT1BVVMkR05BRiQ3NjJBVUctbk9BVUdIQUxsQndBQUFBQUlBZ0VBQUFBQUZ6UXl3QUFBQUFBQUFEZ0FBUC4uWkFBQUFBRC4uLi4uQUFBQUFBQUFBQUFBQUFBQUFBQUFPQ0JEYjJOb2NtRnVaU0JUZEhKbFpYUXNJRmRGVTFRZ1MwVk5VRk5GV1NBZ1RsTlhJREkwTkRBQUFBQUFBQS0tJCQk\"\r\n  },\r\n  \"attributes\": {\r\n    \"aus_regional_geocodes\": [\r\n      \"latitude\",\r\n      \"longitude\",\r\n      \"match_level\",\r\n      \"sa1\",\r\n      \"meshblock\",\r\n      \"lga_code\",\r\n      \"lga_name\",\r\n      \"street_pid\",\r\n      \"locality_pid\",\r\n      \"geocode_level_code\",\r\n      \"geocode_level_description\",\r\n      \"geocode_type_code\",\r\n      \"geocode_type_description\",\r\n      \"highest_level_longitude\",\r\n      \"highest_level_latitude\",\r\n      \"highest_level_elevation\",\r\n      \"highest_level_planimetric_accuracy\",\r\n      \"highest_level_boundary_extent\",\r\n      \"highest_level_geocode_reliability_code\",\r\n      \"highest_level_geocode_reliability_description\",\r\n      \"confidence_level_code\",\r\n      \"confidence_level_description\",\r\n      \"2016_meshblock_id\",\r\n      \"2016_meshblock_code\",\r\n      \"2016_meshblock_match_code\",\r\n      \"2016_meshblock_match_description\",\r\n      \"2011_meshblock_id\",\r\n      \"2011_meshblock_code\",\r\n      \"2011_meshblock_match_code\",\r\n      \"2011_meshblock_match_description\",\r\n      \"address_type_code\",\r\n      \"primary_address_pid\",\r\n      \"address_join_type\",\r\n      \"collector_district_id\",\r\n      \"collector_district_code\",\r\n      \"commonwealth_electoral_boundary_id\",\r\n      \"commonwealth_electoral_boundary_name\",\r\n      \"statistical_local_area_id\",\r\n      \"statistical_local_area_code\",\r\n      \"statistical_local_area_name\",\r\n      \"state_electoral_boundary_id\",\r\n      \"state_electoral_boundary_name\",\r\n      \"state_electoral_effective_start\",\r\n      \"state_electoral_effective_end\",\r\n      \"state_electoral_new_pid\",\r\n      \"state_electoral_new_name\",\r\n      \"state_electoral_new_effective_start\",\r\n      \"state_electoral_new_effective_end\",\r\n      \"address_level_longitude\",\r\n      \"address_level_latitude\",\r\n      \"address_level_elevation\",\r\n      \"address_level_planimetric_accuracy\",\r\n      \"address_level_boundary_extent\",\r\n      \"address_level_geocode_reliability_code\",\r\n      \"address_level_geocode_reliability_description\",\r\n      \"street_level_longitude\",\r\n      \"street_level_latitude\",\r\n      \"street_level_planimetric_accuracy\",\r\n      \"street_level_boundary_extent\",\r\n      \"street_level_geocode_reliability_code\",\r\n      \"street_level_geocode_reliability_description\",\r\n      \"locality_level_longitude\",\r\n      \"locality_level_latitude\",\r\n      \"locality_level_planimetric_accuracy\",\r\n      \"locality_level_geocode_reliability_code\",\r\n      \"locality_level_geocode_reliability_description\",\r\n      \"gnaf_legal_parcel_identifier\",\r\n      \"locality_class_code\"\r\n    ]\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/Enrichment/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"Enrichment",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enrichment v2 - NZL Regional Geocodes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "match-rule",
+						"value": "strict"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country_iso\": \"NZL\",\n    \"keys\": {\n        \"global_address_key\": \"aWQ9c2hvcCBhMSAyMDggUXVlZW4gU3RyZWV0LCBNYXN0ZXJ0b24gNTgxMCwgTmV3IFplYWxhbmR-YWx0X2tleT1-ZGF0YXNldD1OWkxfUEFGfmZvcm1hdF9rZXk9TlpMJCQ3NjJOWkwtTk9OWkxId3prQndBQUFBQUlBZ0VBQUFBQUNfQTVnQUFBQUFBQkFITm9iM0FnWVRFQU1qQTRBQUQuLjFBQUFBQUEuLi4uLndBQUFBQUFBQUFBQUFBQUFBQUFBSE5vYjNBZ1lURXZNakE0SUZGMVpXVnVJRk4wY21WbGRDd2dUV0Z6ZEdWeWRHOXVJRFU0TVRBQUFBQUFBQS0tJCQk\"\n    },\n    \"attributes\": {\n        \"nzl_regional_geocodes\": [\n            \"front_of_property_nztm_x_coordinate\",\n            \"front_of_property_nztm_y_coordinate\",\n            \"centroid_of_property_nztm_x_coordinate\",\n            \"centroid_of_property_nztm_y_coordinate\",\n            \"front_of_property_latitude\",\n            \"front_of_property_longitude\",\n            \"centroid_of_property_latitude\",\n            \"centroid_of_property_longitude\",\n            \"linz_parcel_id\",\n            \"property_purpose_type\",\n            \"addressable\",\n            \"mesh_block_code\",\n            \"territorial_authority_code\",\n            \"territorial_authority_name\",\n            \"regional_council_code\",\n            \"regional_council_name\",\n            \"general_electorate_code\",\n            \"general_electorate_name\",\n            \"maori_electorate_code\",\n            \"maori_electorate_name\",\n            \"match_level\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/Enrichment/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"Enrichment",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enrichment v2 - NZL Consumer View",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "match-rule",
+						"value": "strict"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country_iso\": \"NZL\",\n    \"keys\": {\n        \"global_address_key\": \"aWQ9MTEgQnJpc3RvbCBTdHJlZXQsIE1hdGF1cmEgIDk3MTIsIE5ldyBaZWFsYW5kfmFsdF9rZXk9fmRhdGFzZXQ9TlpMX1BBRn5mb3JtYXRfa2V5PU5aTCQkNzYyTlpMLU1PTlpMSGdua0J3QUFBQUFJQWdFQUFBQUFFcThkVUFnaEFBSUFBQUFBQUFBQUFBRC4uMlFBQUFBQS4uLi4ud0FBQUFBQUFBQUFBQUFBQUFBQUFFMXZiR1Z6ZDI5eWRHZ2dVM1J5WldWMExDQlFhWEJwZEdWaExDQlhaV3hzYVc1bmRHOXVJRFl3TVRFQUFBQUFBQS0tJCQk\"\n    },\n    \"attributes\": {\n        \"nzl_cv_household\": [\n            \"head_of_household_age\",\n            \"children_at_address\",\n            \"household_composition\",\n            \"head_of_household_lifestage\",\n            \"adults_at_address\",\n            \"mosaic_group\",\n            \"mosaic_type_group\",\n            \"mosaic_segment\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/Enrichment/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"Enrichment",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enrichment v2 - UK Location Essential",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "match-rule",
+						"value": "strict"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country_iso\": \"GBR\",\n    \"keys\": {\n        \"global_address_key\": \"aWQ9fDEgQXVkcmV5IFphcHAgRHJpdmV8SHVkc29ufEplcnNleSBDaXR5LCBOSiAwNzMwNX5mb3JtYXRJZD0xMjM0NX5RTD05fmdlbz0w\"\n    },\n    \"attributes\": {\n        \"geocodes\": [\n            \"latitude\",\n            \"longitude\",\n            \"match_level\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/Enrichment/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"Enrichment",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enrichment v2 - UK Location Complete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "match-rule",
+						"value": "strict"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country_iso\": \"GBR\",\n    \"keys\": {\n        \"global_address_key\": \"aWQ9RXhwZXJpYW4gRGF0YSBRdWFsaXR5LCBGcmlhcnMgSG91c2UsIDE2MCBCbGFja2ZyaWFycyBSb2FkLCBMb25kb24sIFNFMSAuLi4sIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9NTUyNDQyNTZ-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCQ5NzE4YzMyYS1iNmQzLTQ0NTgtOWQ1OS1hNWIzOTMyYjQzOTEkJCQ\"\n    },\n    \"attributes\": {\n        \"uk_location_complete\": [\n            \"latitude\",\n            \"longitude\",\n            \"match_level\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/Enrichment/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"Enrichment",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enrichment v2 - AUS ConsumerView",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "match-rule",
+						"value": "strict"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"country_iso\": \"AUS\",\r\n  \"keys\": \r\n\t    {\r\n\t      \"pin\": \"123456789\",\r\n\t      \"dpid\": \"31176490\",\r\n        \"postcode\" : \"7140\"\r\n\t    },\r\n  \"attributes\":\r\n\t    {\r\n\"AUS_CV_Person\":[\"pin\", \"gender\", \"hin\", \"linkage_postcode\"],\r\n\"AUS_CV_Postcode\":[\"postcode\", \"adults_at_address_code\", \"adults_at_address_description\", \"affluence_code\", \"affluence_code_description\", \"children_at_address_code_0_10_years\", \"children_at_address_description_0_10_years\", \"children_at_address_code_11_18_years\", \"children_at_address_description_11_18_years\", \"credit_demand_code\", \"credit_demand_description\", \"head_of_household_age_code\", \"head_of_household_age_description\", \"household_income_code\", \"household_income_description\", \"length_of_residence_code\", \"length_of_residence_description\", \"lifestage_code\", \"lifestage_code_description\", \"mosaic_group_2018\", \"mosaic_type_2018\", \"household_composition_code\", \"household_composition_description\", \"risk_insight_code\", \"risk_insight_description\", \"mosaic_group\", \"mosaic_type\", \"mosaic_group_2015\", \"mosaic_type_2015\"],\r\n\"AUS_CV_Household\":[\"address\",\r\n                    \"adults_at_address_code\",\r\n                    \"adults_at_address_description\",\r\n                    \"affluence_code\",\r\n                    \"affluence_description\",\r\n                    \"channel_preference\",\r\n                    \"channel_preference_description\",\r\n                    \"children_at_address_code_0_10_years\",\r\n                    \"children_at_address_code_11_18_years\",\r\n                    \"children_at_address_description_0_10_years\",\r\n                    \"children_at_address_description_11_18_years\",\r\n                    \"credit_demand_code\",\r\n                    \"credit_demand_description\",\r\n                    \"gnaf_latitude\",\r\n                    \"gnaf_longitude\",\r\n                    \"gnaf_pid\",\r\n                    \"head_of_household_age_code\",\r\n                    \"head_of_household_age_description\",\r\n                    \"hin\",\r\n                    \"household_composition_code\",\r\n                    \"household_composition_description\",\r\n                    \"household_income_code\",\r\n                    \"household_income_description\",\r\n                    \"length_of_residence_code\",\r\n                    \"length_of_residence_description\",\r\n                    \"lifestage_code\",\r\n                    \"lifestage_description\",\r\n                    \"local_government_area_code\",\r\n                    \"local_government_area_name\",\r\n                    \"meshblock\",\r\n                    \"mosaic_factor1_percentile_2018\",\r\n                    \"mosaic_factor1_score_2018\",\r\n                    \"mosaic_factor2_percentile_2018\",\r\n                    \"mosaic_factor2_score_2018\",\r\n                    \"mosaic_factor3_percentile_2018\",\r\n                    \"mosaic_factor3_score_2018\",\r\n                    \"mosaic_factor4_percentile_2018\",\r\n                    \"mosaic_factor4_score_2018\",\r\n                    \"mosaic_factor5_percentile_2018\",\r\n                    \"mosaic_factor5_score_2018\",\r\n                    \"mosaic_group\",\r\n                    \"mosaic_group_2015\",\r\n                    \"mosaic_group_2018\",\r\n                    \"mosaic_segment\",\r\n                    \"mosaic_segment_2015\",\r\n                    \"mosaic_segment_2018\",\r\n                    \"mosaic_type\",\r\n                    \"mosaic_type_2015\",\r\n                    \"mosaic_type_2018\",\r\n                    \"postcode\",\r\n                    \"residential_flag\",\r\n                    \"risk_insight_code\",\r\n                    \"risk_insight_description\",\r\n                    \"sa1\",\r\n                    \"state\",\r\n                    \"suburb\"]\r\n      }\r\n}"
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/Enrichment/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"Enrichment",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enrichment v2 - Global Geocodes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}"
+					},
+					{
+						"key": "match-rule",
+						"value": "strict"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country_iso\": \"USA\",\n    \"keys\": {\n        \"global_address_key\": \"aWQ9TE9UIDc5IDIgQ0hBTVBBR05FIFNUUkVFVCwgUEVUUklFIFFMRCA0NTAyLCBBdXN0cmFsaWF-YWx0X2tleT1HQVFMRDE1NTcxOTk5MH5kYXRhc2V0PUFVU19HTkFGfmZvcm1hdGlkPUdBUUxEMTU1NzE5OTkwfnFsPTIzfmdlbz0w\"\n    },\n    \"attributes\": {\n        \"geocodes\": [\n            \"latitude\",\n            \"longitude\",\n            \"match_level\"\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/Enrichment/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"Enrichment",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
