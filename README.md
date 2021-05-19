@@ -20,6 +20,11 @@ The collections are configured to authenticate using a global **Auth-Token** var
 
 Our real-time REST APIs give you flexibility and customization when verifying and enriching your contact data before it hits your database.
 
+### Experian Address Validation
+
+Experian Address Validation is a real-time REST API that helps you to capture validated global addresses. 
+
+[Download file](../../raw/master/Experian%20Address%20Validation.postman_collection.json)
 
 ### Experian Email Validation
 
