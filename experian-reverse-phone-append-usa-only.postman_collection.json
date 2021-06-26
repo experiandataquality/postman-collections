@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "b1e39058-a8dc-4ba3-8f5a-a7cde3089535",
+		"name": "experian-reverse-phone-append-usa-only",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Experian Reverse Phone Append (USA only)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/phone/append/v1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"phone",
+						"append",
+						"v1"
+					]
+				},
+				"description": "Experian Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only."
+			},
+			"response": []
+		}
+	]
+}
