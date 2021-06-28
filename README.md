@@ -44,17 +44,17 @@ Experian Phone Validation is a real-time REST API that helps you quickly determi
 
 [Download file](../../raw/master/experian-phone-validation.postman_collection.json)
 
-### Experian Reverse Phone Append (USA only)
-
-Experian Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only.
-
-[Download file](../../raw/master/experian-reverse-phone-append-usa-only.postman_collection.json)
-
 ### Global Intuitive
 
 Global Intuitive is a fast and efficient REST API for capturing validated global addresses.
 
 [Download file](../../raw/master/global-intuitive.postman_collection.json)
+
+### Reverse Phone Append (USA only)
+
+Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only.
+
+[Download file](../../raw/master/reverse-phone-append.postman_collection.json)
 
 ## SOAP APIs
 

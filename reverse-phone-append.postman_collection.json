@@ -1,12 +1,12 @@
 {
 	"info": {
 		"_postman_id": "b1e39058-a8dc-4ba3-8f5a-a7cde3089535",
-		"name": "experian-reverse-phone-append-usa-only",
+		"name": "Reverse Phone Append",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Experian Reverse Phone Append (USA only)",
+			"name": "Reverse Phone Append (USA only)",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -49,7 +49,7 @@
 						"v1"
 					]
 				},
-				"description": "Experian Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only."
+				"description": "Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only."
 			},
 			"response": []
 		}
