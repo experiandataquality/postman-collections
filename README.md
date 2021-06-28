@@ -24,37 +24,37 @@ Our real-time REST APIs give you flexibility and customization when verifying an
 
 Experian Address Validation is a real-time REST API that helps you to capture validated global addresses. 
 
-[Download file](Experian%20Address%20Validation.postman_collection.json)
+[Download file](../../raw/master/Experian%20Address%20Validation.postman_collection.json)
 
 ### Experian Enrichment
 
 Experian Enrichment is a real-time REST API you can use to gain an improved level of insight into individuals, households and geographic areas.
 
-[Download file](Experian%20Enrichment.postman_collection.json)
+[Download file](../../raw/master/Experian%20Enrichment.postman_collection.json)
 
 ### Experian Email Validation
 
 Experian Email Validation is a real-time REST API that helps you quickly determine the validity and status of email addresses at the point of collection. 
 
-[Download file](experian-email-validation.postman_collection.json)
+[Download file](../../raw/master/experian-email-validation.postman_collection.json)
 
 ### Experian Phone Validation
 
 Experian Phone Validation is a real-time REST API that helps you quickly determine the validity and status of phone numbers at the point of collection.
 
-[Download file](experian-phone-validation.postman_collection.json)
+[Download file](../../raw/master/experian-phone-validation.postman_collection.json)
 
 ### Experian Reverse Phone Append (USA only)
 
 Experian Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only.
 
-[Download file](experian-reverse-phone-append-usa-only.postman_collection.json)
+[Download file](../../raw/master/experian-reverse-phone-append-usa-only.postman_collection.json)
 
 ### Global Intuitive
 
 Global Intuitive is a fast and efficient REST API for capturing validated global addresses.
 
-[Download file](global-intuitive.postman_collection.json)
+[Download file](../../raw/master/global-intuitive.postman_collection.json)
 
 ## SOAP APIs
 
@@ -66,7 +66,7 @@ You will need to edit the body of each request and replace the placeholders.
 
 > Despite being a SOAP API, this Postman collection allows you to make requests via the REST client. You won't be able to use any of the code generation functionality with this collection.
 
-[Download file](address-validate-soap.postman_collection.json)
+[Download file](../../raw/master/address-validate-soap.postman_collection.json)
 
 
 
