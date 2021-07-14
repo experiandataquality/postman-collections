@@ -50,6 +50,12 @@ Global Intuitive is a fast and efficient REST API for capturing validated global
 
 [Download file](../../raw/master/global-intuitive.postman_collection.json)
 
+### Reverse Phone Append (USA only)
+
+Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only.
+
+[Download file](../../raw/master/reverse-phone-append.postman_collection.json)
+
 ## SOAP APIs
 
 ### Address Validate SOAP

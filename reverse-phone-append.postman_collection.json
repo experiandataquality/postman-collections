@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "a0be1188-1fa9-4125-b091-0469b6132f79",
+		"name": "Reverse Phone Append",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Reverse Phone Append (USA only)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Token",
+						"value": "{{Auth-Token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Reference-Id",
+						"value": "ReversePhoneAppend_Reference_Id_Test",
+						"type": "text"
+					},
+					{
+						"key": "Timeout-Seconds",
+						"value": "5",
+						"type": "text"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.io/phone/append/v1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"phone",
+						"append",
+						"v1"
+					]
+				},
+				"description": "Reverse Phone Append is a real-time REST API which allows you to validate phone number and return different types of client information, such as: name, postal address and phone type. This API supports USA phone numbers only."
+			},
+			"response": []
+		}
+	]
+}
