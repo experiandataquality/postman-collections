@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "04d624f5-3794-4f03-9a90-9e9aa06cbce6",
+		"_postman_id": "34d46166-6b54-4ce5-ae08-96d5ef7d0b5c",
 		"name": "Experian Email Validation",
 		"description": "Experian Email Validation is a real-time REST API that you can use to validate email addresses. ",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -28,14 +28,24 @@
 						"key": "Reference-Id",
 						"type": "text",
 						"value": "Email_Validation_Reference_Id_Test"
+					},
+					{
+						"key": "Timeout-Seconds",
+						"value": "15",
+						"type": "default"
+					},
+					{
+						"key": "Add-Metadata",
+						"value": "true",
+						"type": "default"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"support@experian.com\",\r\n  \"timeout\": 5\r\n}"
+					"raw": "{\r\n  \"email\": \"support@experian.com\"\r\n}"
 				},
 				"url": {
-					"raw": "https://api.experianaperture.io/email/validation/v1",
+					"raw": "https://api.experianaperture.io/email/validate/v2",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -44,8 +54,8 @@
 					],
 					"path": [
 						"email",
-						"validation",
-						"v1"
+						"validate",
+						"v2"
 					]
 				}
 			},
@@ -56,7 +66,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "39e1b473-1e18-4dd9-b5f1-eb80c4b69b15",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -66,7 +75,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "79954c89-93bc-40c6-8cda-d1d488abf76b",
 				"type": "text/javascript",
 				"exec": [
 					""
