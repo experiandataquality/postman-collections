@@ -1,67 +1,1200 @@
 {
 	"info": {
-		"_postman_id": "6c2d7be6-9c7c-4c6a-916b-5e48cdeb6477",
+		"_postman_id": "ca0dee88-9122-41a5-b347-ba0d679f412a",
 		"name": "Experian Address Validation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Search",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Auth-Token",
-						"value": "{{Auth-Token}}"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"country_iso\": \"GBR\",\r\n  \"components\": {\r\n    \"unspecified\": [\r\n      \"Experian, Friars House, 160 Blackfriars Road\"\r\n    ]\r\n  },\r\n  \"location\": \"\",\r\n  \"dataset\": \"\"\r\n}"
-				},
-				"url": {
-					"raw": "https://api.experianaperture.io/address/search/v1",
-					"protocol": "https",
-					"host": [
-						"api",
-						"experianaperture",
-						"io"
-					],
-					"path": [
-						"address",
-						"search",
-						"v1"
-					]
-				}
-			},
-			"response": [
+			"name": "address",
+			"item": [
 				{
-					"name": "Example Search",
-					"originalRequest": {
+					"name": "format/v1/:global_address_key",
+					"item": [
+						{
+							"name": "Format the address with the supplied key.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									},
+									{
+										"description": "Specifies if the response should contain the address broken down into its components.",
+										"key": "Add-Components",
+										"value": "false"
+									},
+									{
+										"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+										"key": "Add-Metadata",
+										"value": "false"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address/format/v1/:global_address_key",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"format",
+										"v1",
+										":global_address_key"
+									],
+									"variable": [
+										{
+											"key": "global_address_key",
+											"value": "",
+											"description": "(Required) Global address key."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Your unique key, called a token, that is required to submit an API request.",
+												"key": "Auth-Token",
+												"value": ""
+											},
+											{
+												"description": "Alternative Auth Token header.",
+												"key": "x-app-key",
+												"value": ""
+											},
+											{
+												"description": "Optional identifier that will be returned in the response to help you track the request.",
+												"key": "Reference-Id",
+												"value": ""
+											},
+											{
+												"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+												"key": "Timeout-Seconds",
+												"value": ""
+											},
+											{
+												"description": "Specifies if the response should contain the address broken down into its components.",
+												"key": "Add-Components",
+												"value": "true"
+											},
+											{
+												"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+												"key": "Add-Metadata",
+												"value": "true"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/address/format/v1/:global_address_key",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"address",
+												"format",
+												"v1",
+												":global_address_key"
+											],
+											"variable": [
+												{
+													"key": "global_address_key",
+													"value": "",
+													"description": "(Required) Global address key."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"result\": {\n    \"global_address_key\": \"QVVTfjcuNzMwak9BVVNIQXpsQndBQUFBQUJBd0VBQUFBQk9uQ09FWUFoQUFJUUNDQUFBQUFBQVFBMk5UUTVBRFlBQVAuLlFnQUFBQUQuLi4uLkFBQUFBQUFBQUFBQUFBQUFBQUFBVENBMk5UUTVJRk4wSUV0cGJHUmhJRkprSURVME9RQUFBQUFBfjIy\",\n    \"confidence\": \"Verified match\",\n    \"address\": {\n      \"address_line_1\": \"L 6  549 St Kilda Rd\",\n      \"address_line_2\": \"\",\n      \"address_line_3\": \"\",\n      \"locality\": \"MELBOURNE\",\n      \"region\": \"VIC\",\n      \"postal_code\": \"3004\",\n      \"country\": \"AUSTRALIA\"\n    },\n    \"components\": {\n      \"country_name\": \"AUSTRALIA\",\n      \"country_iso_3\": \"AUS\",\n      \"country_iso_2\": \"AU\",\n      \"postal_code\": {\n        \"full_name\": \"3004\",\n        \"primary\": \"3004\"\n      },\n      \"sub_building\": {\n        \"floor\": {\n          \"full_name\": \"L 6\",\n          \"type\": \"L\",\n          \"value\": \"6\"\n        }\n      },\n      \"building\": {\n        \"building_number\": \"549\"\n      },\n      \"street\": {\n        \"full_name\": \"St Kilda Rd\",\n        \"name\": \"St Kilda\",\n        \"type\": \"Rd\"\n      },\n      \"locality\": {\n        \"town\": {\n          \"name\": \"MELBOURNE\"\n        }\n      }\n    }\n  },\n  \"metadata\": {\n    \"address_info\": {\n      \"identifier\": {\n        \"dpid\": \"62147712\",\n        \"hin\": \"203060068\"\n      }\n    },\n    \"barcode\": {\n      \"delivery_point_barcode\": \"1301012002011121210102312002130231113\",\n      \"sort_plan_number\": \"022\"\n    },\n    \"address_classification\": {\n      \"delivery_type\": \"Business\"\n    }\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Format the address with the supplied key using a custom layout.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									},
+									{
+										"description": "Specifies if the response should contain the address broken down into its components.",
+										"key": "Add-Components",
+										"value": "false"
+									},
+									{
+										"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+										"key": "Add-Metadata",
+										"value": "false"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"layouts\": [\n    \"default\"\n  ],\n  \"layout_format\": \"address_lines\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/format/v1/:global_address_key",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"format",
+										"v1",
+										":global_address_key"
+									],
+									"variable": [
+										{
+											"key": "global_address_key",
+											"value": "",
+											"description": "(Required) Global address key."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Your unique key, called a token, that is required to submit an API request.",
+												"key": "Auth-Token",
+												"value": ""
+											},
+											{
+												"description": "Alternative Auth Token header.",
+												"key": "x-app-key",
+												"value": ""
+											},
+											{
+												"description": "Optional identifier that will be returned in the response to help you track the request.",
+												"key": "Reference-Id",
+												"value": ""
+											},
+											{
+												"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+												"key": "Timeout-Seconds",
+												"value": ""
+											},
+											{
+												"description": "Specifies if the response should contain the address broken down into its components.",
+												"key": "Add-Components",
+												"value": "true"
+											},
+											{
+												"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+												"key": "Add-Metadata",
+												"value": "true"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"layouts\": [\n        \"default\"\n    ],\n    \"layout_format\": \"address_lines\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/address/format/v1/:global_address_key",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"address",
+												"format",
+												"v1",
+												":global_address_key"
+											],
+											"variable": [
+												{
+													"key": "global_address_key",
+													"value": "",
+													"description": "(Required) Global address key."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"result\": {\n    \"global_address_key\": \"QVVTfjcuNzMwak9BVVNIQXpsQndBQUFBQUJBd0VBQUFBQk9uQ09FWUFoQUFJUUNDQUFBQUFBQVFBMk5UUTVBRFlBQVAuLlFnQUFBQUQuLi4uLkFBQUFBQUFBQUFBQUFBQUFBQUFBVENBMk5UUTVJRk4wSUV0cGJHUmhJRkprSURVME9RQUFBQUFBfjIy\",\n    \"confidence\": \"Verified match\",\n    \"address\": {\n      \"address_line_1\": \"L 6  549 St Kilda Rd\",\n      \"address_line_2\": \"\",\n      \"address_line_3\": \"\",\n      \"locality\": \"MELBOURNE\",\n      \"region\": \"VIC\",\n      \"postal_code\": \"3004\",\n      \"country\": \"AUSTRALIA\"\n    },\n    \"components\": {\n      \"country_name\": \"AUSTRALIA\",\n      \"country_iso_3\": \"AUS\",\n      \"country_iso_2\": \"AU\",\n      \"postal_code\": {\n        \"full_name\": \"3004\",\n        \"primary\": \"3004\"\n      },\n      \"sub_building\": {\n        \"floor\": {\n          \"full_name\": \"L 6\",\n          \"type\": \"L\",\n          \"value\": \"6\"\n        }\n      },\n      \"building\": {\n        \"building_number\": \"549\"\n      },\n      \"street\": {\n        \"full_name\": \"St Kilda Rd\",\n        \"name\": \"St Kilda\",\n        \"type\": \"Rd\"\n      },\n      \"locality\": {\n        \"town\": {\n          \"name\": \"MELBOURNE\"\n        }\n      }\n    }\n  },\n  \"metadata\": {\n    \"address_info\": {\n      \"identifier\": {\n        \"dpid\": \"62147712\",\n        \"hin\": \"203060068\"\n      }\n    },\n    \"barcode\": {\n      \"delivery_point_barcode\": \"1301012002011121210102312002130231113\",\n      \"sort_plan_number\": \"022\"\n    },\n    \"address_classification\": {\n      \"delivery_type\": \"Business\"\n    }\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "suggestions",
+					"item": [
+						{
+							"name": "Step into a suggestion.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address/suggestions/stepin/v1/:global_address_key",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"suggestions",
+										"stepin",
+										"v1",
+										":global_address_key"
+									],
+									"variable": [
+										{
+											"key": "global_address_key",
+											"value": "",
+											"description": "(Required) Global address key."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Your unique key, called a token, that is required to submit an API request.",
+												"key": "Auth-Token",
+												"value": ""
+											},
+											{
+												"description": "Alternative Auth Token header.",
+												"key": "x-app-key",
+												"value": ""
+											},
+											{
+												"description": "Optional identifier that will be returned in the response to help you track the request.",
+												"key": "Reference-Id",
+												"value": ""
+											},
+											{
+												"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+												"key": "Timeout-Seconds",
+												"value": ""
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/address/suggestions/stepin/v1/:global_address_key",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"address",
+												"suggestions",
+												"stepin",
+												"v1",
+												":global_address_key"
+											],
+											"variable": [
+												{
+													"key": "global_address_key",
+													"value": "",
+													"description": "(Required) Global address key."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"result\": {\n    \"more_results_available\": false,\n    \"confidence\": \"Verified match\",\n    \"suggestions_key\": \"R0JSfjcuNzMwUk1HQlJGQWpsQndBQUFBQUJBUUVBQVFBQUFBQ0ltWHVSZ0NFd2doTUFJQUFBQUFBQkFFRndZWEowYldWdWRDQXhOUUEzT1FBQS4uOVFBQUFBQVAuLi4uOEFBQUFBQUFBQUFBQUFBQUFBQUEtLX40Mg\",\n    \"suggestions_prompt\": \"Enter selection\",\n    \"suggestions\": [\n      {\n        \"global_address_key\": \"R0JSfjcuNzMwVU9HQlJGQWpsQndBQUFBQUJBd0VBQUFBQWlKbDdrWUFoTUlJVEFDQUFBQUFBQVFCQmNHRnlkRzFsYm5RZ01UVUFOemtBQVAuLlVBQUFBQUQuLi4uLkFBQUFBQUFBQUFBQUFBQUFBQUFBUVhCaGNuUnRaVzUwSURFMUxDQTNPU0JUZEdGMGFXOXVJRkp2WVdRc0lFdEZURlJaTENCR2FXWmxBQUFBQUFBLX40Mg\",\n        \"text\": \"Apartment 15, 79 Station Road, KELTY, Fife KY4 0BL\",\n        \"format\": \"https://api.experianaperture.io/address/format/v1/R0JSfjcuNzMwVU9HQlJGQWpsQndBQUFBQUJBd0VBQUFBQWlKbDdrWUFoTUlJVEFDQUFBQUFBQVFCQmNHRnlkRzFsYm5RZ01UVUFOemtBQVAuLlVBQUFBQUQuLi4uLkFBQUFBQUFBQUFBQUFBQUFBQUFBUVhCaGNuUnRaVzUwSURFMUxDQTNPU0JUZEdGMGFXOXVJRkp2WVdRc0lFdEZURlJaTENCR2FXWmxBQUFBQUFBLX40Mg\",\n        \"additional_attributes\": [\n          {\n            \"name\": \"picklist_display\",\n            \"value\": \"Apartment 15, 79 Station Road, KELTY, Fife\"\n          },\n          {\n            \"name\": \"score\",\n            \"value\": \"100\"\n          },\n          {\n            \"name\": \"postcode\",\n            \"value\": \"KY4 0BL\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Refine a suggestion.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refinement\": \"Apartment 15\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/suggestions/refine/v1/:key",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"suggestions",
+										"refine",
+										"v1",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "key",
+											"value": "",
+											"description": "(Required) Global_address_key or suggestions_key."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Your unique key, called a token, that is required to submit an API request.",
+												"key": "Auth-Token",
+												"value": ""
+											},
+											{
+												"description": "Alternative Auth Token header.",
+												"key": "x-app-key",
+												"value": ""
+											},
+											{
+												"description": "Optional identifier that will be returned in the response to help you track the request.",
+												"key": "Reference-Id",
+												"value": ""
+											},
+											{
+												"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+												"key": "Timeout-Seconds",
+												"value": ""
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"refinement\": \"Apartment 15\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/address/suggestions/refine/v1/:key",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"address",
+												"suggestions",
+												"refine",
+												"v1",
+												":key"
+											],
+											"variable": [
+												{
+													"key": "key",
+													"value": "",
+													"description": "(Required) Global_address_key or suggestions_key."
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"result\": {\n    \"more_results_available\": false,\n    \"confidence\": \"Verified match\",\n    \"suggestions_key\": \"R0JSfjcuNzMwUk1HQlJGQWpsQndBQUFBQUJBUUVBQVFBQUFBQ0ltWHVSZ0NFd2doTUFJQUFBQUFBQkFFRndZWEowYldWdWRDQXhOUUEzT1FBQS4uOVFBQUFBQVAuLi4uOEFBQUFBQUFBQUFBQUFBQUFBQUEtLX40Mg\",\n    \"suggestions_prompt\": \"Enter selection\",\n    \"suggestions\": [\n      {\n        \"global_address_key\": \"R0JSfjcuNzMwVU9HQlJGQWpsQndBQUFBQUJBd0VBQUFBQWlKbDdrWUFoTUlJVEFDQUFBQUFBQVFCQmNHRnlkRzFsYm5RZ01UVUFOemtBQVAuLlVBQUFBQUQuLi4uLkFBQUFBQUFBQUFBQUFBQUFBQUFBUVhCaGNuUnRaVzUwSURFMUxDQTNPU0JUZEdGMGFXOXVJRkp2WVdRc0lFdEZURlJaTENCR2FXWmxBQUFBQUFBLX40Mg\",\n        \"text\": \"Apartment 15, 79 Station Road, KELTY, Fife KY4 0BL\",\n        \"format\": \"https://api.experianaperture.io/address/format/v1/R0JSfjcuNzMwVU9HQlJGQWpsQndBQUFBQUJBd0VBQUFBQWlKbDdrWUFoTUlJVEFDQUFBQUFBQVFCQmNHRnlkRzFsYm5RZ01UVUFOemtBQVAuLlVBQUFBQUQuLi4uLkFBQUFBQUFBQUFBQUFBQUFBQUFBUVhCaGNuUnRaVzUwSURFMUxDQTNPU0JUZEdGMGFXOXVJRkp2WVdRc0lFdEZURlJaTENCR2FXWmxBQUFBQUFBLX40Mg\",\n        \"additional_attributes\": [\n          {\n            \"name\": \"picklist_display\",\n            \"value\": \"Apartment 15, 79 Station Road, KELTY, Fife\"\n          },\n          {\n            \"name\": \"score\",\n            \"value\": \"100\"\n          },\n          {\n            \"name\": \"postcode\",\n            \"value\": \"KY4 0BL\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Search and format a list of suggestions.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									},
+									{
+										"description": "Specifies if the response should contain the address broken down into its components.",
+										"key": "Add-Components",
+										"value": "false"
+									},
+									{
+										"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+										"key": "Add-Metadata",
+										"value": "false"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"country_iso\": \"GBR\",\n  \"datasets\": [\n    \"gb-address\"\n  ],\n  \"max_suggestions\": 2,\n  \"components\": {\n    \"unspecified\": [\n      \"160, SE1 8EZ\"\n    ]\n  },\n  \"layouts\": [\n    \"default_classic\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/suggestions/format/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"suggestions",
+										"format",
+										"v1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Your unique key, called a token, that is required to submit an API request.",
+												"key": "Auth-Token",
+												"value": ""
+											},
+											{
+												"description": "Alternative Auth Token header.",
+												"key": "x-app-key",
+												"value": ""
+											},
+											{
+												"description": "Optional identifier that will be returned in the response to help you track the request.",
+												"key": "Reference-Id",
+												"value": ""
+											},
+											{
+												"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+												"key": "Timeout-Seconds",
+												"value": ""
+											},
+											{
+												"description": "Specifies if the response should contain the address broken down into its components.",
+												"key": "Add-Components",
+												"value": "false"
+											},
+											{
+												"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+												"key": "Add-Metadata",
+												"value": "false"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"country_iso\": \"GBR\",\n    \"datasets\": [\n        \"gb-address\"\n    ],\n    \"max_suggestions\": 2,\n    \"components\": {\n        \"unspecified\": [\n            \"160, SE1 8EZ\"\n        ]\n    },\n    \"layouts\": [\n        \"default_classic\"\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/address/suggestions/format/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"address",
+												"suggestions",
+												"format",
+												"v1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"result\": {\n    \"more_results_available\": true,\n    \"confidence\": \"Multiple matches\",\n    \"suggestions\": [\n      {\n        \"global_address_key\": \"R0JSfjcuNzMwLk9HQlJFd3ZsQndBQUFBQUJBd0VBQUFBQm5JZVpVZ0FoRUFJQUFBQUFBQUFBQUFELi4yUUFBQUFBLi4uLi53QUFBQUFBQUFBQUFBQUFBQUFBQURFMk1Dd2dVMFV4SURoRldnQUFBQUFBfjEyfjI\",\n        \"addresses_formatted\": [\n          {\n            \"layout_name\": \"default_classic\",\n            \"address\": {\n              \"LINE_1\": \"Axon Communications\",\n              \"LINE_2\": \"160 Blackfriars Road\",\n              \"Town\": \"LONDON\",\n              \"County\": \"\",\n              \"Postcode\": \"SE1 8EZ\"\n            }\n          }\n        ]\n      },\n      {\n        \"global_address_key\": \"R0JSfjcuNzMwV09HQlJFd3ZsQndBQUFBQUJBd0VBQUFBQm5JZWJVZ0FoRUFJQUFBQUFBQUFBQUFELi4yUUFBQUFBLi4uLi53QUFBQUFBQUFBQUFBQUFBQUFBQURFMk1Dd2dVMFV4SURoRldnQUFBQUFBfjEyfjI\",\n        \"addresses_formatted\": [\n          {\n            \"layout_name\": \"default_classic\",\n            \"address\": {\n              \"LINE_1\": \"C Q G UK Ltd\",\n              \"LINE_2\": \"160 Blackfriars Road\",\n              \"Town\": \"LONDON\",\n              \"County\": \"\",\n              \"Postcode\": \"SE1 8EZ\"\n            }\n          }\n        ]\n      }\n    ]\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get the available datasets for the supplied country.",
+					"request": {
 						"method": "GET",
 						"header": [
 							{
+								"description": "Your unique key, called a token, that is required to submit an API request.",
 								"key": "Auth-Token",
-								"value": "{{Auth-Token}}"
+								"value": ""
+							},
+							{
+								"description": "Alternative Auth Token header.",
+								"key": "x-app-key",
+								"value": ""
+							},
+							{
+								"description": "Optional identifier that will be returned in the response to help you track the request.",
+								"key": "Reference-Id",
+								"value": ""
+							},
+							{
+								"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+								"key": "Timeout-Seconds",
+								"value": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
 							}
 						],
 						"url": {
-							"raw": "https://api.experianaperture.io/address/search/v1",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/address/datasets/v1?country_iso=",
 							"host": [
-								"api",
-								"experianaperture",
-								"io"
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"datasets",
+								"v1"
+							],
+							"query": [
+								{
+									"key": "country_iso",
+									"value": "",
+									"description": "3-letter ISO code for country."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/address/datasets/v1?country_iso=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"datasets",
+										"v1"
+									],
+									"query": [
+										{
+											"key": "country_iso",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": [\n    {\n      \"country_iso_3\": \"AUS\",\n      \"country_name\": \"Australia\",\n      \"datasets\": [\n        {\n          \"id\": \"au-address\",\n          \"name\": \"Australia Postal Address\"\n        },\n        {\n          \"id\": \"au-address-beta\",\n          \"name\": \"Australia Postal Address\"\n        },\n        {\n          \"id\": \"au-address-datafusion\",\n          \"name\": \"Australia Enhanced Address\"\n        },\n        {\n          \"id\": \"au-address-gnaf\",\n          \"name\": \"Australia Geocoded National Address\"\n        },\n        {\n          \"id\": \"au-address-gnaf-beta\",\n          \"name\": \"Australia Geocoded National Address\"\n        }\n      ]\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get the available layouts for the supplied country.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Your unique key, called a token, that is required to submit an API request.",
+								"key": "Auth-Token",
+								"value": ""
+							},
+							{
+								"description": "Alternative Auth Token header.",
+								"key": "x-app-key",
+								"value": ""
+							},
+							{
+								"description": "Optional identifier that will be returned in the response to help you track the request.",
+								"key": "Reference-Id",
+								"value": ""
+							},
+							{
+								"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+								"key": "Timeout-Seconds",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"country_iso\": \"AUS\",\n  \"datasets\": [\n    \"au-address-gnaf\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/layouts/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"layouts",
+								"v1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"country_iso\": \"AUS\",\n    \"datasets\": [\n        \"au-address-gnaf\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/layouts/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"layouts",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": [\n    {\n      \"name\": \"Default\",\n      \"country_iso_3\": \"AUS\",\n      \"datasets\": [\n        \"au-address-gnaf\"\n      ]\n    },\n    {\n      \"name\": \"JB Hifi\",\n      \"country_iso_3\": \"AUS\",\n      \"datasets\": [\n        \"au-address-gnaf\"\n      ]\n    },\n    {\n      \"name\": \"JB Hifi_all\",\n      \"country_iso_3\": \"AUS\",\n      \"datasets\": [\n        \"au-address-gnaf\"\n      ]\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Lookup an address based on a key.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Your unique key, called a token, that is required to submit an API request.",
+								"key": "Auth-Token",
+								"value": ""
+							},
+							{
+								"description": "Alternative Auth Token header.",
+								"key": "x-app-key",
+								"value": ""
+							},
+							{
+								"description": "Optional identifier that will be returned in the response to help you track the request.",
+								"key": "Reference-Id",
+								"value": ""
+							},
+							{
+								"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+								"key": "Timeout-Seconds",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"country_iso\": \"GBR\",\n  \"datasets\": [\n    \"gb-additional-gas\"\n  ],\n  \"key\": {\n    \"type\": \"default\",\n    \"value\": \"2481849308\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/lookup/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"lookup",
+								"v1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"country_iso\": \"GBR\",\n    \"datasets\": [\n        \"gb-additional-gas\"\n    ],\n    \"key\": {\n        \"type\": \"default\",\n        \"value\": \"2481849308\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/lookup/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"lookup",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"more_results_available\": false,\n    \"confidence\": \"Verified match\",\n    \"suggestions_key\": \"R0JHfjcuNzMweE1HQkdGQWpsQndBQUFBQUZBUUVBQVFBQUFBRXF4R2ZZQUNHUUFnQUFBQUFBQUFBQUFQLi5BQUFBQUFELi4uLi5BQUFBQUFBQUFBQUFBQUFBQUFBLX4xMA\",\n    \"suggestions_prompt\": \"Enter selection\",\n    \"suggestions\": [\n      {\n        \"global_address_key\": \"R0JHfjcuNzMwbk9HQkdGQWpsQndBQUFBQUZBd0VBQUFBQktzUm4yQUFoa0FJQUFBQUFBQUFBQUFELi53QUFBQUFBLi4uLi53QUFBQUFBQUFBQUFBQUFBQUFBQURJME9ERTRORGt6TURnQUFBQUFBQS0tfjEw\",\n        \"text\": \"6 Valley View, Highley, BRIDGNORTH, Shropshire WV16 6EF\",\n        \"format\": \"https://api.experianaperture.io/address/format/v1/R0JHfjcuNzMwbk9HQkdGQWpsQndBQUFBQUZBd0VBQUFBQktzUm4yQUFoa0FJQUFBQUFBQUFBQUFELi53QUFBQUFBLi4uLi53QUFBQUFBQUFBQUFBQUFBQUFBQURJME9ERTRORGt6TURnQUFBQUFBQS0tfjEw\",\n        \"additional_attributes\": [\n          {\n            \"name\": \"picklist_display\",\n            \"value\": \"6 Valley View, Highley, BRIDGNORTH, Shropshire\"\n          },\n          {\n            \"name\": \"postcode\",\n            \"value\": \"WV16 6EF\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get the available prompt sets.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Your unique key, called a token, that is required to submit an API request.",
+								"key": "Auth-Token",
+								"value": ""
+							},
+							{
+								"description": "Alternative Auth Token header.",
+								"key": "x-app-key",
+								"value": ""
+							},
+							{
+								"description": "Optional identifier that will be returned in the response to help you track the request.",
+								"key": "Reference-Id",
+								"value": ""
+							},
+							{
+								"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+								"key": "Timeout-Seconds",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"country_iso\": \"AUS\",\n  \"datasets\": [\n    \"au-address-datafusion\"\n  ],\n  \"search_type\": \"singleline\",\n  \"prompt_set\": \"generic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/promptsets/v1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"promptsets",
+								"v1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"country_iso\": \"AUS\",\n  \"datasets\": [\n    \"au-address-datafusion\"\n  ],\n  \"search_type\": \"singleline\",\n  \"prompt_set\": \"generic\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/promptsets/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"promptsets",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"lines\": [\n      {\n        \"prompt\": \"Building Number or Name\",\n        \"suggested_input_length\": 40,\n        \"example\": \"125v\"\n      },\n      {\n        \"prompt\": \"Street\",\n        \"suggested_input_length\": 40,\n        \"example\": \"Summer St\"\n      },\n      {\n        \"prompt\": \"Town or City\",\n        \"suggested_input_length\": 40,\n        \"example\": \"Boston\"\n      },\n      {\n        \"prompt\": \"Postal code\",\n        \"suggested_input_length\": 10,\n        \"example\": \"02110-1615\"\n      }\n    ]\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Search for an address.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Your unique key, called a token, that is required to submit an API request.",
+								"key": "Auth-Token",
+								"value": ""
+							},
+							{
+								"description": "Alternative Auth Token header.",
+								"key": "x-app-key",
+								"value": ""
+							},
+							{
+								"description": "Optional identifier that will be returned in the response to help you track the request.",
+								"key": "Reference-Id",
+								"value": ""
+							},
+							{
+								"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+								"key": "Timeout-Seconds",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"country_iso\": \"AUS\",\n  \"datasets\": [\n    \"au-address\"\n  ],\n  \"max_suggestions\": 5,\n  \"components\": {\n    \"unspecified\": [\n      \"Unit 1, 8 Main Avenue, Lidcombe\"\n    ]\n  },\n  \"options\": [\n    {\n      \"name\": \"search_type\",\n      \"value\": \"singleline\"\n    },\n    {\n      \"name\": \"flatten\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"intensity\",\n      \"value\": \"exact\"\n    },\n    {\n      \"name\": \"prompt_set\",\n      \"value\": \"default\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/search/v1",
+							"host": [
+								"{{baseUrl}}"
 							],
 							"path": [
 								"address",
@@ -70,58 +1203,220 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [],
-					"cookie": [],
-					"body": "{\r\n    \"result\": {\r\n        \"more_results_available\": false,\r\n        \"confidence\": \"Verified match\",\r\n        \"suggestions\": [\r\n            {\r\n                \"global_address_key\": \"aWQ9RXhwZXJpYW4gRGF0YSBRdWFsaXR5LCBGcmlhcnMgSG91c2UsIDE2MCBCbGFja2ZyaWFycyBSb2FkLCBMb25kb24sIFNFMSAuLi4sIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9NTUyNDQyNTZ-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCQ2M2ViNWZjNC01YmFiLTQyNjItYTZiMi1lMDNlNGViM2Y5YWQkJCQ\",\r\n                \"text\": \"Experian Data Quality, Friars House, 160 Blackfriars Road, London, SE1 ...\",\r\n                \"matched\": [\r\n                    [\r\n                        53,\r\n                        57\r\n                    ],\r\n                    [\r\n                        41,\r\n                        52\r\n                    ],\r\n                    [\r\n                        37,\r\n                        40\r\n                    ],\r\n                    [\r\n                        23,\r\n                        29\r\n                    ],\r\n                    [\r\n                        0,\r\n                        8\r\n                    ]\r\n                ],\r\n                \"format\": \"https://api.experianaperture.io/address/format/v1/aWQ9RXhwZXJpYW4gRGF0YSBRdWFsaXR5LCBGcmlhcnMgSG91c2UsIDE2MCBCbGFja2ZyaWFycyBSb2FkLCBMb25kb24sIFNFMSAuLi4sIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9NTUyNDQyNTZ-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJCQ2M2ViNWZjNC01YmFiLTQyNjItYTZiMi1lMDNlNGViM2Y5YWQkJCR-UUw9NDR-Z2VvPVRydWU\"\r\n            }\r\n        ]\r\n    }\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Format",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Auth-Token",
-						"value": "",
-						"type": "text"
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"country_iso\": \"AUS\",\n    \"datasets\": [\n        \"au-address\"\n    ],\n    \"max_suggestions\": 5,\n    \"components\": {\n        \"unspecified\": [\n            \"Unit 1, 8 Main Avenue, Lidcombe\"\n        ]\n    },\n    \"options\": [\n        {\n            \"name\": \"search_type\",\n            \"value\": \"singleline\"\n        },\n        {\n            \"name\": \"flatten\",\n            \"value\": \"true\"\n        },\n        {\n            \"name\": \"intensity\",\n            \"value\": \"exact\"\n        },\n        {\n            \"name\": \"prompt_set\",\n            \"value\": \"default\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/search/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"search",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"more_results_available\": false,\n    \"confidence\": \"Verified match\",\n    \"suggestions_key\": \"QVVTfjcuNzMwUk1BVVNIQW5sQndBQUFBQUJBUUVBQVFBQUFBQkVHczlSZ0NFd2doTUFJUUVDRUFnaEFBSUFBQUFBQUFBQU1RQUEuLjlrQUFBQUFQLi4uLjhBQUFBQUFBQUFBQUFBQUFBQUFBLS1-MzY\",\n    \"suggestions_prompt\": \"Enter selection\",\n    \"suggestions\": [\n      {\n        \"global_address_key\": \"QVVTfjcuNzMwVU9BVVNIQW5sQndBQUFBQUJBd0VBQUFBQVJCclBVWUFoTUlJVEFDRUJBaEFJSVFBQ0FBQUFBQUFBQURFQUFQLi5aQUFBQUFELi4uLi5BQUFBQUFBQUFBQUFBQUFBQUFBQVZXNXBkQ0F4SUNBNElFMWhhVzRnUVhabGJuVmxMQ0JNU1VSRFQwMUNSU0FnVGxOWEFBQUFBQUEtfjM2\",\n        \"text\": \"Unit 1  8 Main Avenue, LIDCOMBE  NSW  2141\",\n        \"format\": \"https://api.experianaperture.io/address/format/v1/QVVTfjcuNzMwVU9BVVNIQW5sQndBQUFBQUJBd0VBQUFBQVJCclBVWUFoTUlJVEFDRUJBaEFJSVFBQ0FBQUFBQUFBQURFQUFQLi5aQUFBQUFELi4uLi5BQUFBQUFBQUFBQUFBQUFBQUFBQVZXNXBkQ0F4SUNBNElFMWhhVzRnUVhabGJuVmxMQ0JNU1VSRFQwMUNSU0FnVGxOWEFBQUFBQUEtfjM2\",\n        \"additional_attributes\": [\n          {\n            \"name\": \"picklist_display\",\n            \"value\": \"Unit 1  8 Main Avenue, LIDCOMBE  NSW\"\n          },\n          {\n            \"name\": \"score\",\n            \"value\": \"100\"\n          },\n          {\n            \"name\": \"postcode\",\n            \"value\": \"2141\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Validate an address.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Your unique key, called a token, that is required to submit an API request.",
+								"key": "Auth-Token",
+								"value": ""
+							},
+							{
+								"description": "Alternative Auth Token header.",
+								"key": "x-app-key",
+								"value": ""
+							},
+							{
+								"description": "Optional identifier that will be returned in the response to help you track the request.",
+								"key": "Reference-Id",
+								"value": ""
+							},
+							{
+								"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+								"key": "Timeout-Seconds",
+								"value": ""
+							},
+							{
+								"description": "Specifies if the response should contain the address broken down into its components.",
+								"key": "Add-Components",
+								"value": "false"
+							},
+							{
+								"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+								"key": "Add-Metadata",
+								"value": "false"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"country_iso\": \"AUS\",\n  \"datasets\": [\n    \"au-address\"\n  ],\n  \"components\": {\n    \"unspecified\": [\n      \"Unit 1, 8 Main Ave, Lidcombe, 2141\"\n    ]\n  },\n  \"options\": [\n    {\n      \"name\": \"prompt_set\",\n      \"value\": \"default\"\n    },\n    {\n      \"name\": \"flatten\",\n      \"value\": \"true\"\n    },\n    {\n      \"name\": \"intensity\",\n      \"value\": \"exact\"\n    }\n  ],\n  \"layouts\": [\n    \"default\"\n  ],\n  \"layout_format\": \"default\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.experianaperture.io/address/validate/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"experianaperture",
+								"io"
+							],
+							"path": [
+								"address",
+								"validate",
+								"v1"
+							]
+						}
 					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Add-Components",
-						"value": "true",
-						"type": "text"
-					},
-					{
-						"key": "Add-Metadata",
-						"value": "true",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://api.experianaperture.io/address/format/v1/",
-					"protocol": "https",
-					"host": [
-						"api",
-						"experianaperture",
-						"io"
-					],
-					"path": [
-						"address",
-						"format",
-						"v1",
-						""
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									},
+									{
+										"description": "Specifies if the response should contain the address broken down into its components.",
+										"key": "Add-Components",
+										"value": "false"
+									},
+									{
+										"description": "Specify whether the response should return all fields and values, in addition to the main core information.",
+										"key": "Add-Metadata",
+										"value": "false"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"country_iso\": \"AUS\",\n    \"datasets\": [\n        \"au-address\"\n    ],\n    \"components\": {\n        \"unspecified\": [\n            \"Unit 1, 8 Main Ave, Lidcombe, 2141\"\n        ]\n    },\n    \"options\": [\n        {\n            \"name\": \"prompt_set\",\n            \"value\": \"default\"\n        },\n        {\n            \"name\": \"flatten\",\n            \"value\": \"true\"\n        },\n        {\n            \"name\": \"intensity\",\n            \"value\": \"exact\"\n        }\n    ],\n    \"layouts\": [\n        \"default\"\n    ],\n    \"layout_format\": \"default\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/validate/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"validate",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"confidence\": \"Verified match\",\n    \"address\": {\n      \"address_line_1\": \"U 1  8 Main Ave\",\n      \"address_line_2\": \"\",\n      \"address_line_3\": \"\",\n      \"locality\": \"LIDCOMBE\",\n      \"region\": \"NSW\",\n      \"postal_code\": \"2141\",\n      \"country\": \"AUSTRALIA\"\n    }\n  }\n}"
+						}
 					]
 				}
-			},
-			"response": []
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.experianaperture.io/",
+			"type": "string"
+		},
+		{
+			"key": "globalAddressKey",
+			"value": "global_address_key"
 		}
 	]
 }
