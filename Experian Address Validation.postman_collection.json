@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ca0dee88-9122-41a5-b347-ba0d679f412a",
+		"_postman_id": "2c81dbd3-a7eb-4274-baaf-676998e98c36",
 		"name": "Experian Address Validation",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9786005"
 	},
 	"item": [
 		{
@@ -1028,6 +1029,128 @@
 							],
 							"cookie": [],
 							"body": "{\n  \"result\": {\n    \"more_results_available\": false,\n    \"confidence\": \"Verified match\",\n    \"suggestions_key\": \"R0JHfjcuNzMweE1HQkdGQWpsQndBQUFBQUZBUUVBQVFBQUFBRXF4R2ZZQUNHUUFnQUFBQUFBQUFBQUFQLi5BQUFBQUFELi4uLi5BQUFBQUFBQUFBQUFBQUFBQUFBLX4xMA\",\n    \"suggestions_prompt\": \"Enter selection\",\n    \"suggestions\": [\n      {\n        \"global_address_key\": \"R0JHfjcuNzMwbk9HQkdGQWpsQndBQUFBQUZBd0VBQUFBQktzUm4yQUFoa0FJQUFBQUFBQUFBQUFELi53QUFBQUFBLi4uLi53QUFBQUFBQUFBQUFBQUFBQUFBQURJME9ERTRORGt6TURnQUFBQUFBQS0tfjEw\",\n        \"text\": \"6 Valley View, Highley, BRIDGNORTH, Shropshire WV16 6EF\",\n        \"format\": \"https://api.experianaperture.io/address/format/v1/R0JHfjcuNzMwbk9HQkdGQWpsQndBQUFBQUZBd0VBQUFBQktzUm4yQUFoa0FJQUFBQUFBQUFBQUFELi53QUFBQUFBLi4uLi53QUFBQUFBQUFBQUFBQUFBQUFBQURJME9ERTRORGt6TURnQUFBQUFBQS0tfjEw\",\n        \"additional_attributes\": [\n          {\n            \"name\": \"picklist_display\",\n            \"value\": \"6 Valley View, Highley, BRIDGNORTH, Shropshire\"\n          },\n          {\n            \"name\": \"postcode\",\n            \"value\": \"WV16 6EF\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Lookup an address based on a key V2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Your unique key, called a token, that is required to submit an API request.",
+								"key": "Auth-Token",
+								"value": ""
+							},
+							{
+								"description": "Alternative Auth Token header.",
+								"key": "x-app-key",
+								"value": ""
+							},
+							{
+								"description": "Optional identifier that will be returned in the response to help you track the request.",
+								"key": "Reference-Id",
+								"value": ""
+							},
+							{
+								"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+								"key": "Timeout-Seconds",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Add-Addresses",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"country_iso\": \"GBR\",\n  \"max_addresses\":250,\n  \"datasets\": [\n    \"gb-address\"\n  ],\n  \"key\": {\n    \"type\": \"locality\",\n    \"value\": \"London\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/lookup/v2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"lookup",
+								"v2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Your unique key, called a token, that is required to submit an API request.",
+										"key": "Auth-Token",
+										"value": ""
+									},
+									{
+										"description": "Alternative Auth Token header.",
+										"key": "x-app-key",
+										"value": ""
+									},
+									{
+										"description": "Optional identifier that will be returned in the response to help you track the request.",
+										"key": "Reference-Id",
+										"value": ""
+									},
+									{
+										"description": "Maximum time you are prepared to wait for a response, expressed in seconds. Acceptable values: 2-15. If a timeout occurs, an HTTP status code of 408 - Request Timeout will be returned.",
+										"key": "Timeout-Seconds",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"country_iso\": \"GBR\",\n  \"max_addresses\":250,\n  \"datasets\": [\n    \"gb-address\"\n  ],\n  \"key\": {\n    \"type\": \"locality\",\n    \"value\": \"London\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/address/lookup/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"address",
+										"lookup",
+										"v1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": {\n        \"more_results_available\": false,\n        \"confidence\": \"Multiple matches\",\n        \"suggestions\": [\n            {\n                \"locality\": {\n                    \"town\": {\n                        \"name\": \"London\"\n                    }\n                },\n                \"postal_code\": {\n                    \"full_name\": \"Wc2r 1La\"\n                }\n            }\n        ],\n        \"addresses\": [\n            {\n                \"text\": \"43 Matlock Court, Copley Close, London, W7 1EB\",\n                \"matched\": [\n                    [\n                        32,\n                        38\n                    ]\n                ],\n                \"global_address_key\": \"aWQ9NDMgTWF0bG9jayBDb3VydCwgQ29wbGV5IENsb3NlLCBMb25kb24sIFc3IDFFQiwgVW5pdGVkIEtpbmdkb21-YWx0X2tleT01NjE0NDI1Nn5kYXRhc2V0PUdCUl9QQUZ-Zm9ybWF0X2tleT1HQlIkZ2ItYWRkcmVzcyQxNGMzYzg4Ny0wMzI2LTRlZDEtYjJhZi00ZGRkYTk3YzI1MDIkJCQ\",\n                \"format\": \"https://api.experianaperture.io/address/format/v1/aWQ9NDMgTWF0bG9jayBDb3VydCwgQ29wbGV5IENsb3NlLCBMb25kb24sIFc3IDFFQiwgVW5pdGVkIEtpbmdkb21-YWx0X2tleT01NjE0NDI1Nn5kYXRhc2V0PUdCUl9QQUZ-Zm9ybWF0X2tleT1HQlIkZ2ItYWRkcmVzcyQxNGMzYzg4Ny0wMzI2LTRlZDEtYjJhZi00ZGRkYTk3YzI1MDIkJCR-UUw9Ng\"\n            },\n            {\n                \"text\": \"St. Thomas Church, Prince George Avenue, London, N14 4SN\",\n                \"matched\": [\n                    [\n                        41,\n                        47\n                    ]\n                ],\n                \"global_address_key\": \"aWQ9U3QuIFRob21hcyBDaHVyY2gsIFByaW5jZSBHZW9yZ2UgQXZlbnVlLCBMb25kb24sIE4xNCA0U04sIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9NTcwNDkyNDN-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJGdiLWFkZHJlc3MkNTE2ZDNhMDYtYjg2OC00Y2EwLWEwZTktNGMyZDY2M2E0NGZkJCQk\",\n                \"format\": \"https://api.experianaperture.io/address/format/v1/aWQ9U3QuIFRob21hcyBDaHVyY2gsIFByaW5jZSBHZW9yZ2UgQXZlbnVlLCBMb25kb24sIE4xNCA0U04sIFVuaXRlZCBLaW5nZG9tfmFsdF9rZXk9NTcwNDkyNDN-ZGF0YXNldD1HQlJfUEFGfmZvcm1hdF9rZXk9R0JSJGdiLWFkZHJlc3MkNTE2ZDNhMDYtYjg2OC00Y2EwLWEwZTktNGMyZDY2M2E0NGZkJCQkflFMPTY\"\n            },\n            {\n                \"text\": \"London, NW2 9WH\",\n                \"matched\": [\n                    [\n                        0,\n                        6\n                    ]\n                ],\n                \"global_address_key\": \"aWQ9TG9uZG9uLCBOVzIgOVdILCBVbml0ZWQgS2luZ2RvbX5hbHRfa2V5PTU3MDQ2MDg3fmRhdGFzZXQ9R0JSX1BBRn5mb3JtYXRfa2V5PUdCUiRnYi1hZGRyZXNzJDRkY2Q4NDM3LWRhNmUtNDJjMC04NjQyLTlmNzE4MDc1MTJmNiQkJA\",\n                \"format\": \"https://api.experianaperture.io/address/format/v1/aWQ9TG9uZG9uLCBOVzIgOVdILCBVbml0ZWQgS2luZ2RvbX5hbHRfa2V5PTU3MDQ2MDg3fmRhdGFzZXQ9R0JSX1BBRn5mb3JtYXRfa2V5PUdCUiRnYi1hZGRyZXNzJDRkY2Q4NDM3LWRhNmUtNDJjMC04NjQyLTlmNzE4MDc1MTJmNiQkJH5RTD02\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
