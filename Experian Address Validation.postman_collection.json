@@ -1066,6 +1066,7 @@
 								"value": "application/json"
 							},
 							{
+                                "description": "A boolean, indicating if addresses should be added to the response.",
 								"key": "Add-Addresses",
 								"value": "true",
 								"type": "text"
@@ -1129,14 +1130,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/address/lookup/v1",
+									"raw": "{{baseUrl}}/address/lookup/v2",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"address",
 										"lookup",
-										"v1"
+										"v2"
 									]
 								}
 							},
