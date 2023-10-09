@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "5101ef16-4781-46b0-b51e-0993e65137ba",
+		"name": "Layout API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2100727",
+		"_collection_link": "https://gold-astronaut-734294.postman.co/workspace/Experian~bed50733-0445-47d2-9ad3-d980e9500f65/collection/2100727-5101ef16-4781-46b0-b51e-0993e65137ba?action=share&source=collection_link&creator=2100727"
+	},
+	"item": [
+		{
+			"name": "Create Layouts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"layout\": {\r\n    \"name\": \"TestLayoutGBR_030423\",\r\n    \"comment\": \"TestLayoutGBR_030423\",\r\n    \"applies_to\": [\r\n      {\r\n        \"country_iso\": \"GBR\",\r\n        \"datasets\": [\r\n          \"gb-address\"\r\n        ]\r\n      }\r\n    ],\r\n    \"options\": {\r\n      \"variation\": 1,\r\n      \"flatten_diacritics\": false,\r\n      \"enable_enhanced_layout\": false,\r\n      \"display_enhanced_info_on_picklist\": false,\r\n      \"enable_intelligent_layout\": false,\r\n      \"capitalise_unused\": false,\r\n      \"separate_elements\": true,\r\n      \"element_separator\": {\r\n        \"default\": \", \",\r\n        \"configuration_by_element\": {\r\n          \"buildingNumber\": \", ^ \",\r\n          \"subBuildingNumber\": \", ^ \",\r\n          \"postcode\": \" ^ \",\r\n          \"deliveryPointSuffix\": \" ^ \",\r\n          \"country\": \" ^ \",\r\n          \"pafAddressKey\": \"^\",\r\n          \"pafOrganisationKey\": \"^\"\r\n        }\r\n      },\r\n      \"terminate_lines\": false,\r\n      \"line_terminator\": {\r\n        \"default\": \", \",\r\n        \"configuration_by_element\": {\r\n          \"postcode\": \"^\",\r\n          \"deliveryPointSuffix\": \"^\",\r\n          \"country\": \".^.\"\r\n        }\r\n      },\r\n      \"pad_lines\": false,\r\n      \"multiple_dataplus_delimiter\": \"|\",\r\n      \"abbreviate_item\": [\r\n        \"thoroughfareName\",\r\n        \"county\"\r\n      ],\r\n      \"capitalise_item\": [\r\n        \"postcode\",\r\n        \"country\"\r\n      ]\r\n    },\r\n    \"lines\": [\r\n      {\r\n        \"line_name\": \"Line 1\",\r\n        \"max_width\": 255\r\n      },\r\n      {\r\n        \"line_name\": \"Line 2\",\r\n        \"max_width\": 255\r\n      },\r\n      {\r\n        \"line_name\": \"Line 3\",\r\n        \"max_width\": 255\r\n      },\r\n      {\r\n        \"line_name\": \"Locality\",\r\n        \"max_width\": 255,\r\n        \"elements\": [\r\n          {\r\n            \"element_name\": \"town\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"line_name\": \"Region\",\r\n        \"max_width\": 255\r\n      },\r\n      {\r\n        \"line_name\": \"Postal Code\",\r\n        \"max_width\": 255,\r\n        \"elements\": [\r\n          {\r\n            \"element_name\": \"postcode\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"line_name\": \"Country\",\r\n        \"max_width\": 255,\r\n        \"elements\": [\r\n          {\r\n            \"element_name\": \"country\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.experianaperture.ioaddress/layouts/v2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"ioaddress"
+					],
+					"path": [
+						"layouts",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Layouts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "",
+						"type": "default"
+					},
+					{
+						"key": "Reference-id",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.experianaperture.io/address/layouts/v2?country_iso=GBR",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"address",
+						"layouts",
+						"v2"
+					],
+					"query": [
+						{
+							"key": "country_iso",
+							"value": "GBR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Layouts by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://api.experianaperture.io/address/layouts/v2/TestLayoutGBR_030423",
+					"protocol": "https",
+					"host": [
+						"api",
+						"experianaperture",
+						"io"
+					],
+					"path": [
+						"address",
+						"layouts",
+						"v2",
+						"TestLayoutGBR_030423"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
