@@ -28,7 +28,9 @@ Experian Address Validation is a real-time REST API that helps you to capture va
 
 ### Experian Layout API
 
-Experian Layout API is the real time REST API that that use to create layouts for addresses.
+Experian Layout API is the real time REST API that helps you to manage layouts for Experian Addresses Validation.
+
+[Download file](../../raw/master/Experian%20Layout%20API.postman_collection.json)
 
 ### Experian Enrichment
 
